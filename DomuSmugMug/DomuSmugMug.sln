@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomuSmugMug", "DomuSmugMug.csproj", "{2B0C2728-1916-4498-830D-C0F96EA598F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomuSmugMug.Service", "..\DomuSmugMug.Service\DomuSmugMug.Service.csproj", "{710CE08A-B191-4317-A1BB-CDE2AC102A66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{2B0C2728-1916-4498-830D-C0F96EA598F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B0C2728-1916-4498-830D-C0F96EA598F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B0C2728-1916-4498-830D-C0F96EA598F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710CE08A-B191-4317-A1BB-CDE2AC102A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710CE08A-B191-4317-A1BB-CDE2AC102A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710CE08A-B191-4317-A1BB-CDE2AC102A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710CE08A-B191-4317-A1BB-CDE2AC102A66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
