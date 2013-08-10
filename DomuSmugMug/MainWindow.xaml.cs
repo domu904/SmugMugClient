@@ -1,21 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using RestSharp;
 
 namespace DomuSmugMug
@@ -26,11 +15,11 @@ namespace DomuSmugMug
         public MainWindow()
         {
             InitializeComponent();
+            PingSmugMugService();
         }
 
         public void CallSmugMug()
         {            
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -40,23 +29,18 @@ namespace DomuSmugMug
                                UserName = UserNameTextBox.SelectedText,
                                Password = PasswordTextBox.SelectedText
                            };
-            CallRequest();
-
+            PingSmugMugService();
         }
 
-        private void CallRequest()
+        private static void PingSmugMugService()
         {
-            var client = new RestClient("http://api.smugmug.com/services/api/rest/1.3.0/");
-
-
-            var request = new RestRequest("resource/{id}", Method.POST);
-            request.AddParameter("method", "smugmug.service.ping"); 
-            request.AddUrlSegment("method", "smugmug.service.ping");
-            request.AddUrlSegment("APIKey", ConfigurationManager.AppSettings["myKey"]);
+            var client = new RestClient(ConfigurationManager.AppSettings["SmugMugServiceURL"]);            
+            var request = new RestRequest("/", Method.POST);
+            request.AddParameter("method", "smugmug.service.ping");
+            request.AddParameter("APIKey", ConfigurationManager.AppSettings["SmugMugAPIKey"]); 
 
             request.AddHeader("header", "value");
 
-            // execute the request
             var response = client.Execute(request);
             var content = response.Content; 
         }
@@ -118,17 +102,16 @@ namespace DomuSmugMug
 
     public class User
     {
-        private string myKey;
+        private string apiKey;
         private string myPvtKey;
 
         public User()
         {
-            myKey = ConfigurationManager.AppSettings["myKey"];
+            apiKey = ConfigurationManager.AppSettings["SmugMugAPIKey"];
             myPvtKey = ConfigurationManager.AppSettings["myPvtKey"];
         }
 
         public string UserName { get; set; }
-        public string Password { get; set; }
-        
+        public string Password { get; set; }        
     }
 }
