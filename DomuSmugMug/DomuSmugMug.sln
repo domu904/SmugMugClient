@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomuSmugMug", "DomuSmugMug.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomuSmugMug.Service", "..\DomuSmugMug.Service\DomuSmugMug.Service.csproj", "{710CE08A-B191-4317-A1BB-CDE2AC102A66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomuSmugMugTest", "DomuSmugMugTest\DomuSmugMugTest.csproj", "{30CFB1CB-687C-41A4-85D3-742EA5E51EE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{710CE08A-B191-4317-A1BB-CDE2AC102A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{710CE08A-B191-4317-A1BB-CDE2AC102A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{710CE08A-B191-4317-A1BB-CDE2AC102A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30CFB1CB-687C-41A4-85D3-742EA5E51EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CFB1CB-687C-41A4-85D3-742EA5E51EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CFB1CB-687C-41A4-85D3-742EA5E51EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CFB1CB-687C-41A4-85D3-742EA5E51EE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

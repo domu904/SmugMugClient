@@ -37,7 +37,7 @@ namespace DomuSmugMug
             PingSmugMug();
         }
 
-        private static bool PingSmugMug()
+        public static bool PingSmugMug()
         {
             var client = new RestClient(ConfigurationManager.AppSettings["SmugMugServiceURL"]);
             var request = new RestRequest("/", Method.POST);
