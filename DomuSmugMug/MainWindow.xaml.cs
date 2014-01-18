@@ -34,15 +34,21 @@ namespace DomuSmugMug
 
         private static void PingSmugMugService()
         {
-            var client = new RestClient(ConfigurationManager.AppSettings["SmugMugServiceURL"]);            
+            PingSmugMug();
+        }
+
+        private static bool PingSmugMug()
+        {
+            var client = new RestClient(ConfigurationManager.AppSettings["SmugMugServiceURL"]);
             var request = new RestRequest("/", Method.POST);
             request.AddParameter("method", "smugmug.service.ping");
-            request.AddParameter("APIKey", ConfigurationManager.AppSettings["SmugMugAPIKey"]); 
-
+            request.AddParameter("APIKey", ConfigurationManager.AppSettings["SmugMugAPIKey"]);
             request.AddHeader("header", "value");
 
             var response = client.Execute(request);
-            var content = response.Content; 
+            var content = response.Content;
+
+            return !string.IsNullOrEmpty(content);
         }
 
         static string HttpGet(string url)
